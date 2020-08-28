@@ -19,7 +19,7 @@ namespace DataBaseProject
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            lbl_WelcomUserName.Text = SignIn.name;
+            lbl_WelcomUserName.Text = "Welcome: "+ SignIn.name;
             txt_NameHome.Text = SignIn.name;
             txt_EmailHome.Text = SignIn.email;
             txt_PasswordHome.Text = SignIn.password;
