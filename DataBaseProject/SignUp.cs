@@ -23,35 +23,39 @@ namespace DataBaseProject
 
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
-            string UserName = txt_Name.Text;
-            string UserEmail = txt_Email.Text;
-            string UserPassword = txt_Password.Text;
-            string UserCountry = txt_Country.Text;
 
-            if (UserName.Equals(" "))
+            string userName = txt_Name.Text;
+            string userEmail = txt_Email.Text;
+            string userPassword = txt_Password.Text;
+            string userCountry = txt_Country.Text;
+
+            
+            if(userName.Equals(""))
             {
-                MessageBox.Show("Please enter Your user name.");
+                MessageBox.Show("Write your user name.");
             }
-            else if (UserEmail.Equals(" "))
+           else if (userEmail.Equals(""))
             {
-                MessageBox.Show("Please enter Your  Email.");
+                MessageBox.Show("Write your Email.");
             }
-            else if (UserPassword.Equals(" "))
+           else if (userPassword.Equals(""))
             {
-                MessageBox.Show("Please enter Your Password.");
+                MessageBox.Show("Write your Password.");
             }
-            else if (UserCountry.Equals(" "))
+           else if (userCountry.Equals(""))
             {
-                MessageBox.Show("Please enter Your Country.");
+                MessageBox.Show("Write your country.");
             }
             else
             {
-                SqlCommand insertCommand = new SqlCommand("Insert into Users(Name,Email,Password,Country) Values(@UserName,@UserEmail,@UserPassword,@UserCountry)");
+               
 
-                insertCommand.Parameters.AddWithValue("@userName", UserName);
-                insertCommand.Parameters.AddWithValue("@userEmail", UserEmail);
-                insertCommand.Parameters.AddWithValue("@userPassword", UserPassword);
-                insertCommand.Parameters.AddWithValue("@userCountry", UserCountry);
+                SqlCommand insertCommand = new SqlCommand("Insert into Users(Name,Email,Password,Country) Values(@userName,@userEmail,@userPassword,@userCountry)");
+
+                insertCommand.Parameters.AddWithValue("@userName", userName);
+                insertCommand.Parameters.AddWithValue("@userEmail", userEmail);
+                insertCommand.Parameters.AddWithValue("@userPassword", userPassword);
+                insertCommand.Parameters.AddWithValue("@userCountry", userCountry);
 
                 int row = ObjDbAccess.executeQuery(insertCommand);
                 if (row == 1)
