@@ -29,26 +29,26 @@ namespace DataBaseProject
             string userPassword = txt_Password.Text;
             string userCountry = txt_Country.Text;
 
-            
-            if(userName.Equals(""))
+
+            if (userName.Equals(""))
             {
                 MessageBox.Show("Write your user name.");
             }
-           else if (userEmail.Equals(""))
+            else if (userEmail.Equals(""))
             {
                 MessageBox.Show("Write your Email.");
             }
-           else if (userPassword.Equals(""))
+            else if (userPassword.Equals(""))
             {
                 MessageBox.Show("Write your Password.");
             }
-           else if (userCountry.Equals(""))
+            else if (userCountry.Equals(""))
             {
                 MessageBox.Show("Write your country.");
             }
             else
             {
-               
+
 
                 SqlCommand insertCommand = new SqlCommand("Insert into Users(Name,Email,Password,Country) Values(@userName,@userEmail,@userPassword,@userCountry)");
 
@@ -73,8 +73,13 @@ namespace DataBaseProject
                 }
             }
         }
+
+        
     }
 }
+        
+
+       
 
         
 
