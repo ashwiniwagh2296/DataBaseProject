@@ -52,6 +52,7 @@
             this.btn_UpdateInfo.TabIndex = 18;
             this.btn_UpdateInfo.Text = "Update my Account Information";
             this.btn_UpdateInfo.UseVisualStyleBackColor = true;
+            this.btn_UpdateInfo.Click += new System.EventHandler(this.btn_UpdateInfo_Click);
             // 
             // lbl_Country
             // 
@@ -169,6 +170,7 @@
             this.btn_Delete.TabIndex = 20;
             this.btn_Delete.Text = "Delete my Account ";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // lbl_WelcomUserName
             // 

@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace DataBaseProject
@@ -60,11 +62,11 @@ namespace DataBaseProject
                 int row = ObjDbAccess.executeQuery(insertCommand);
                 if (row == 1)
                 {
-                    MessageBox.Show("Account created successfully");
+                    MessageBox.Show("Account created successfully,Please login now.");
                     this.Hide();
 
-                    HomePage home = new HomePage();
-                    home.Show();
+                    SignIn sign = new SignIn();
+                    sign.Show();
 
                 }
                 else
